@@ -3,21 +3,21 @@ import {Container} from '@mui/material';
 
 const itemData = [
 	{
-		img: 'https://cdn.discordapp.com/attachments/1043545360498442271/1071016993660076063/photo-1487222477894-8943e31ef7b2.jpg',
+		img: 'img/mainPage/photo-1487222477894-8943e31ef7b2.svg',
 		title: 'NEW IN',
 		rows: 2,
 		cols: 1,
 		path: '/store/man',
 	},
 	{
-		img: 'https://cdn.discordapp.com/attachments/1043545360498442271/1071016861933764618/three-3075752_960_720.jpg',
+		img: 'img/mainPage/Mask Group.svg',
 		title: 'NEW COLLECTION',
 		rows: 1,
 		cols: 1,
 		path: '/store/woman',
 	},
 	{
-		img: 'https://cdn.discordapp.com/attachments/1043545360498442271/1071016977092591676/photo-1479064555552-3ef4979f8908.jpg',
+		img: 'img/mainPage/Mask Group (1).svg',
 		title: 'NEW COLLECTION',
 		rows: 1,
 		cols: 1,

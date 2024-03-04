@@ -18,6 +18,7 @@ margin-left: 70px
 
 export const CategoryLink = styled(Link)`
 	display: block;
+	height: 100%;
 `
 export const ImageText = styled.p`
 	display: block;
@@ -46,9 +47,11 @@ export const GridItem = styled.div`
 	position: relative;
 	grid-column: ${(props) => `span ${props.column}`};
 	grid-row: ${(props) => `span ${props.row}`};
+	background-color: #C4C4C4;
 
 	img {
 		height: 100%;
-        width: 100%
+        width: 100%;
+		object-fit: cover;
 	}
 `

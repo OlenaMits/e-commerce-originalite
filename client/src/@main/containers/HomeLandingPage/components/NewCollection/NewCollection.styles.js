@@ -16,6 +16,7 @@ export const NewInH1 = styled.h1`
 `
 export const NewInLink = styled(Link)`
 	display: block;
+	height: 100%;
 `
 export const ImageText = styled.p`
 	display: block;
@@ -48,5 +49,6 @@ export const GridItem = styled.div`
 	img {
 		height: 100%;
         width: 100%;
+		object-fit: cover;
 	}
 `
