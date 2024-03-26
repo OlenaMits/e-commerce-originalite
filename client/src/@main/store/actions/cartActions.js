@@ -68,6 +68,49 @@ export const deleteProductFromCart = createAsyncThunk('cart/deleteProductFromCar
 		return { products };
 	}
 });
+
+export const increaseProductQuantity = createAsyncThunk('cart/increaseProductQuantity', async (id, { getState }) => {
+	const { auth, cart } = getState();
+
+	if (auth.data !== null) {
+		const { data } = await fetchProductFromCart(id, {
+			headers: {
+				Authorization: auth.data?.token,
+			},
+		});
+
+		return data; 
+	} else {
+		return cart.data.map((item) => {
+			if(item.product._id === id) {
+				return { ...item, cartQuantity: item.cartQuantity + 1 };
+			} 
+			return item;
+		});
+	}
+});
+
+export const decreaseProductQuantity = createAsyncThunk('cart/decreaseProductQuantity', async (id, { getState }) => {
+	const { auth, cart } = getState();
+
+	if (auth.data !== null) {
+		const { data } = await fetchProductFromCart(id, {
+			headers: {
+				Authorization: auth.data?.token,
+			},
+		});
+
+		return data; 
+	} else {
+		return cart.data.map((item) => {
+			if(item.product._id === id && item.cartQuantity > 1) {
+				return { ...item, cartQuantity: item.cartQuantity - 1 };
+			} 
+			return item;
+		});
+	}
+})
+
 export const deleteCart = createAsyncThunk('cart/deleteCart', async (user, { getState }) => {
 	const { auth, cart } = getState();
 

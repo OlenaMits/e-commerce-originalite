@@ -5,6 +5,7 @@ import { setColor } from "../../../../store/slices/productSlice";
 import { selectCurrentColor } from "../../../../store/selectors/productSelector";
 
 import { ColorList, ListStyled, ListItemButtonStyled, ListItemIconColor, ColorIcon } from "./ProductInfo.styles";
+import { log } from "handlebars";
 
 function ProductInfoColors({ colors }) {
 	const currentColor = useSelector(selectCurrentColor);
