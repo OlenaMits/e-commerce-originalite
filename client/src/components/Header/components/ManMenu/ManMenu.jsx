@@ -8,7 +8,7 @@ import { getCategories } from '../../../../@main/store/actions/categoriesActions
 import { setFilters } from '../../../../@main/store/slices/filterSlice';
 import { selectFilterCategories } from '../../../../@main/store/selectors/filterSelector';
 
-function ManMenu({ active, closeСategories }) {
+function ManMenu({ active, closeCategories }) {
 	const dispatch = useDispatch();
 
 	const subCategories = useSelector((state) => selectSubCategories(state, 'man'));
@@ -25,7 +25,7 @@ function ManMenu({ active, closeСategories }) {
 					categories: filterCategories === value ? null : value,
 				}),
 			);
-			closeСategories();
+			closeCategories();
 		},
 		[filterCategories],
 	);
@@ -33,7 +33,7 @@ function ManMenu({ active, closeСategories }) {
 	const handleClearFilter = useCallback(() => {
 		dispatch(setFilters({ categories: null }));
 
-		closeСategories();
+		closeCategories();
 	}, [filterCategories]);
 
 	return (

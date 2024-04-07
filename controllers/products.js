@@ -159,19 +159,17 @@ exports.getProductsFilterParams = async (req, res, next) => {
 };
 
 exports.searchProducts = async (req, res, next) => {
-  if (!req.body.query) {
-    res.status(400).json({ message: "Query string is empty" });
+  let search = req.query.search;
+  if (!search) {
+    return res.status(400).json({ message: "Query string is empty" });
   }
 
   //Taking the entered value from client in lower-case and trimed
-  let query = req.body.query.toLowerCase().trim().replace(/\s\s+/g, " ");
-
-  // Creating the array of key-words from taken string
-  let queryArr = query.split(" ");
+  search = search.toLowerCase().trim().replace(/\s\s+/g, " ");
 
   // Finding ALL products, that have at least one match
   let matchedProducts = await Product.find({
-    $text: { $search: query },
+    $text: { $search: search },
   });
 
   res.send(matchedProducts);

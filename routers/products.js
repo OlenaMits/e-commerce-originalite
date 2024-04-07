@@ -71,8 +71,9 @@ router.get("/", getProducts)
 
 router.get("/filter", getProductsFilterParams);
 
+router.get("/search", searchProducts);
+
 router.get("/:itemNo", getProductById);
 
-router.get("/search", searchProducts);
 
 module.exports = router;

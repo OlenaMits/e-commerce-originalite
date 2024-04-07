@@ -18,7 +18,7 @@ import addressSlice from '../@main/store/slices/addressSlice';
 const persistConfig = {
 	key: 'root',
 	storage,
-	blacklist: ['filters', 'product'],
+	blacklist: ['filters', 'product', 'auth'],
 };
 
 const rootReduser = combineReducers({

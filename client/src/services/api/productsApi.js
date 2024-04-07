@@ -9,3 +9,7 @@ export function getProductsList(params) {
 export function getProductById(itemNo) {
 	return axiosInstance.get(`/products/${itemNo}`);
 };
+
+export function getProductsBySearchQuery(search) {
+	return axiosInstance.get(`/products/search`, { params: {search}});
+}

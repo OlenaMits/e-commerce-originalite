@@ -15,7 +15,7 @@ function Search({ active }) {
 			<SearchWrappAnimate id="example-panel" duration={700} height={active}>
 				<form>
 					<TextField sx={{ width: 500 }} onChange={event => setSearchId(event.target.value.toLowerCase())} id="standard-basic" label="Search for item" variant="standard" />
-					<ButtonSearch onClick={() => navigate(`/search/${searchId}`)}  type="button" aria-label="search">
+					<ButtonSearch onClick={() => navigate(`/search/${searchId}`)}  type="submit" aria-label="search">
 						<SearchIcon  />
 					</ButtonSearch>
 				</form>
