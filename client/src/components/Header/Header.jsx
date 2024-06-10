@@ -38,9 +38,11 @@ function Header() {
 	const [dataMenu, setDataMenu] = useState(null);
 
 	const [searchBox, setSearchBox] = useState(false);
+
 	const [mensCategory, setMenCategory] = useState(false);
 	const [womenCategory, setWomenCategory] = useState(false);
 	const [accessoryCategory, setAccessoryCategory] = useState(false);
+
 	const [registrationBox, setRegistrationBox] = useState(false);
 
 	useEffect(() => {
@@ -51,6 +53,7 @@ function Header() {
 			setAccessoryCategory(false) ||
 			setSearchBox(false) ||
 			setRegistrationBox(false);
+
 		document.addEventListener('click', onClick);
 		return () => document.removeEventListener('click', onClick);
 	}, []);

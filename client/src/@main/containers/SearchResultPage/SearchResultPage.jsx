@@ -18,7 +18,6 @@ function SearchResultPage() {
 		}
 	}, [searchId])
 
-console.log(products);
 	return (
 		<Container maxWidth='lg'>
 			<StyledGrid>
@@ -31,7 +30,7 @@ console.log(products);
 									alt={name}
 									id={itemNo} />
 							))}
-							</StyledGrid>
+			</StyledGrid>
 		</Container>
 	)
 }
