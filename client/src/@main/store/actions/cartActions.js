@@ -6,6 +6,7 @@ import {
 	deleteProductFromCart as fetchProductFromCart,
 	deleteCart as fetchDeleteCart,
 } from '../../../services/api/cartApi';
+import { setColor, setSize } from '../slices/productSlice';
 
 export const getCart = createAsyncThunk('cart/getCart', async (_, { getState }) => {
 	const { auth } = getState();
@@ -18,7 +19,7 @@ export const getCart = createAsyncThunk('cart/getCart', async (_, { getState }) 
 	return data;
 });
 
-export const addProductToCart = createAsyncThunk('cart/addProductToCart', async (id, { getState }) => {
+export const addProductToCart = createAsyncThunk('cart/addProductToCart', async (id, { getState, dispatch }) => {
 	const { auth, product, cart } = getState();
 
 	if (auth.data !== null) {
@@ -36,6 +37,9 @@ export const addProductToCart = createAsyncThunk('cart/addProductToCart', async 
 			},
 		);
 
+		dispatch(setColor(null));
+		dispatch(setSize(null));
+
 		return data;
 	} else {
 		const products = [
@@ -47,6 +51,10 @@ export const addProductToCart = createAsyncThunk('cart/addProductToCart', async 
 				color: product.currentColor,
 			},
 		];
+
+		dispatch(setColor(null));
+		dispatch(setSize(null));
+		
 		return { products };
 	}
 });
