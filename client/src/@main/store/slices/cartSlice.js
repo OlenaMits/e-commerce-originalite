@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCart, addProductToCart, deleteProductFromCart, deleteCart } from '../actions/cartActions';
+import { getCart, addProductToCart, deleteProductFromCart, deleteCart, increaseProductQuantity, decreaseProductQuantity } from '../actions/cartActions';
 
 const initialState = {
 	data: [],
@@ -33,6 +33,12 @@ export const cartSlice = createSlice({
 			const { products } = action.payload;
 
 			state.data = [...products];
+		});
+		builder.addCase(increaseProductQuantity.fulfilled, (state, action) => {
+			state.data = action.payload;
+		});
+		builder.addCase(decreaseProductQuantity.fulfilled, (state, action) => {
+			state.data = action.payload;
 		});
 	},
 });

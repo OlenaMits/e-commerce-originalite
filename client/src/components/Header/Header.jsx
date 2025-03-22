@@ -38,9 +38,11 @@ function Header() {
 	const [dataMenu, setDataMenu] = useState(null);
 
 	const [searchBox, setSearchBox] = useState(false);
+
 	const [mensCategory, setMenCategory] = useState(false);
 	const [womenCategory, setWomenCategory] = useState(false);
 	const [accessoryCategory, setAccessoryCategory] = useState(false);
+
 	const [registrationBox, setRegistrationBox] = useState(false);
 
 	useEffect(() => {
@@ -51,6 +53,7 @@ function Header() {
 			setAccessoryCategory(false) ||
 			setSearchBox(false) ||
 			setRegistrationBox(false);
+
 		document.addEventListener('click', onClick);
 		return () => document.removeEventListener('click', onClick);
 	}, []);
@@ -165,15 +168,15 @@ function Header() {
 
 				<ManMenu
 					active={mensCategory && dataMenu === 'menuMen' ? 'auto' : 0}
-					closeСategories={() => setMenCategory(false)}
+					closeCategories={() => setMenCategory(false)}
 				/>
 				<WomanMenu
 					active={womenCategory && dataMenu === 'menuWomen' ? 'auto' : 0}
-					closeСategories={() => setWomenCategory(false)}
+					closeCategories={() => setWomenCategory(false)}
 				/>
 				<Accessory
 					active={accessoryCategory && dataMenu === 'menuAccessory' ? 'auto' : 0}
-					closeСategories={() => setAccessoryCategory(false)}
+					closeCategories={() => setAccessoryCategory(false)}
 				/>
 				<Search active={searchBox && dataMenu === 'menuSearch' ? 240 : 0} />
 				<ShoppingBag isShoppingBag={isShoppingBag} closeShoppingBag={() => setIsShoppingBag(!isShoppingBag)} />

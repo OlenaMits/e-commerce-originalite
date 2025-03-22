@@ -28,7 +28,7 @@ function SearchResultPage() {
 									alt={name}
 									id={itemNo} />
 							))}
-							</StyledGrid>
+			</StyledGrid>
 		</Container>
 	)
 }

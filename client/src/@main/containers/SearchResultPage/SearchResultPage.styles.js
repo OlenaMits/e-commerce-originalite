@@ -6,5 +6,6 @@ export const StyledGrid = styled(Box)`
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
 	row-gap: 4rem;
+	margin-top: 16px;
 	margin-bottom: 16px;
 `;
