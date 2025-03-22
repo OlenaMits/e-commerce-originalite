@@ -6,6 +6,14 @@ export function getProductsList(params) {
 	});
 };
 
+export function getProductsSearchList(value) {
+	return axiosInstance.get('/products/search', {
+		params: {
+			search: value,
+		},
+	});
+};
+
 export function getProductById(itemNo) {
 	return axiosInstance.get(`/products/${itemNo}`);
 };
