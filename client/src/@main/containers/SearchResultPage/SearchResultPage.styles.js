@@ -9,3 +9,13 @@ export const StyledGrid = styled(Box)`
 	margin-top: 16px;
 	margin-bottom: 16px;
 `;
+
+export const StyledBox= styled(Box)`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	row-gap: 4rem;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	height: 350px;
+`;
