@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectProductList } from '../../store/selectors/productListSelectors';
 import ProductCard from '../ProductList/components/ProductCard';
-import { StyledBox, StyledGrid } from './SearchResultPage.styles';
+import { StyledGrid, StyledSearchBox } from './SearchResultPage.styles';
 import React, { useEffect } from 'react';
 import { getProductSearchList } from '../../store/actions/productListActions';
 import EmptyProductPage from '../ProductList/components/EmptyProductPage/EmptyProductPage';
@@ -31,11 +31,12 @@ function SearchResultPage() {
 						id={itemNo} />
 				))}
 			</StyledGrid>
-			<StyledBox>
-				{isNotData && (
+			{isNotData && (
+				<StyledSearchBox>
+
 					<EmptyProductPage />
-				)}
-			</StyledBox>
+				</StyledSearchBox>
+			)}
 		</Container>
 	)
 }
