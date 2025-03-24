@@ -30,13 +30,12 @@ function SearchResultPage() {
 						alt={name}
 						id={itemNo} />
 				))}
+				{isNotData && (
+					<StyledSearchBox>
+						<EmptyProductPage />
+					</StyledSearchBox>
+				)}
 			</StyledGrid>
-			{isNotData && (
-				<StyledSearchBox>
-
-					<EmptyProductPage />
-				</StyledSearchBox>
-			)}
 		</Container>
 	)
 }
