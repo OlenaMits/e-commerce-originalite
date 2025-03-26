@@ -9,6 +9,7 @@ import NewInSection from './components/NewCollection';
 function HomeLandingPage() {
 	const dispatch = useDispatch();
 
+	//TODO: remove getProductList if not needed
 	useEffect(() => {
 		dispatch(getProductList());
 		window.scrollTo(0, 0);

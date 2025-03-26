@@ -159,12 +159,12 @@ exports.getProductsFilterParams = async (req, res, next) => {
 };
 
 exports.searchProducts = async (req, res, next) => {
-  if (!req.body.query) {
+  if (!req.query.search) {
     res.status(400).json({ message: "Query string is empty" });
   }
 
   //Taking the entered value from client in lower-case and trimed
-  let query = req.body.query.toLowerCase().trim().replace(/\s\s+/g, " ");
+  let query = req.query.search.toLowerCase().trim().replace(/\s\s+/g, " ");
 
   // Creating the array of key-words from taken string
   let queryArr = query.split(" ");

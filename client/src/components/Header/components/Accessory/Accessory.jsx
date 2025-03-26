@@ -8,7 +8,7 @@ import { selectFilterCategories } from '../../../../@main/store/selectors/filter
 import { getCategories } from '../../../../@main/store/actions/categoriesActions';
 import { setFilters } from '../../../../@main/store/slices/filterSlice';
 
-function Accessory({ active, closeСategories }) {
+function Accessory({ active, closeCategories }) {
 	const dispatch = useDispatch();
 
 	const subCategories = useSelector((state) => selectSubCategories(state, 'accessories'));
@@ -25,7 +25,7 @@ function Accessory({ active, closeСategories }) {
 					categories: filterCategories === value ? null : value,
 				}),
 			);
-			closeСategories();
+			closeCategories();
 		},
 		[filterCategories],
 	);
@@ -33,7 +33,7 @@ function Accessory({ active, closeСategories }) {
 	const handleClearFilter = useCallback(() => {
 		dispatch(setFilters({ categories: null }));
 
-		closeСategories();
+		closeCategories();
 	}, [filterCategories]);
 
 	return (

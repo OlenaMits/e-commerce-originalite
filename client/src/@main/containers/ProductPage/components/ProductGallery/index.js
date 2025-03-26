@@ -20,6 +20,7 @@ import {
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import React from 'react';
 
 function ProductGallery({ images }) {
 	const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));

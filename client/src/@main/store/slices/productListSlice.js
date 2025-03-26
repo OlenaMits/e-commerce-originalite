@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getProductList } from '../actions/productListActions';
+import { getProductList, getProductSearchList } from '../actions/productListActions';
 
 const initialState = {
 	data: [],
@@ -17,7 +17,11 @@ export const productListSlice = createSlice({
 
 			state.data = products;
 			state.count = productsQuantity;
-		})
+		});
+		builder.addCase(getProductSearchList.fulfilled, (state, action) => {
+			state.data = action.payload;
+			state.count = action.payload?.length;
+		});
 	}
 });
 

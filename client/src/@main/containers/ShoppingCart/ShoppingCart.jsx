@@ -4,8 +4,9 @@ import { Container } from '@mui/system';
 import { useUserData } from '../../../@profile/hooks/useUserData';
 import { cartDataSelect } from '../../store/selectors/cartSelector';
 import { Link } from 'react-router-dom';
-import { addProductToCart, deleteProductFromCart } from '../../store/actions/cartActions';
+import { addProductToCart, deleteProductFromCart, increaseProductQuantity, decreaseProductQuantity } from '../../store/actions/cartActions';
 import EmptyCart from '../ShoppingCart/EmptyCart/EmptyCart';
+import { clearData } from '../../store/slices/productSlice';
 import {
 	ShoppingCartWrapp,
 	RemoveButton,
@@ -32,9 +33,20 @@ function ShoppingCart() {
 		setTotalPrice(priceItem.reduce((a, b) => a + b, 0));
 	}, [cart]);
 
-	const handleClickIncremet = useCallback(
+	useEffect(() => {
+		dispatch(clearData());
+	});
+
+	const handleClickIncrease = useCallback(
 		(value) => {
-			dispatch(addProductToCart(value._id));
+			dispatch(increaseProductQuantity(value._id));
+		},
+		[dispatch],
+	);
+
+	const handleClickDecrease = useCallback(
+		(value) => {
+			dispatch(decreaseProductQuantity(value._id));
 		},
 		[dispatch],
 	);
@@ -53,9 +65,11 @@ function ShoppingCart() {
 						<li className="color">Color : {color}</li>
 						<li className="size">Size : {size}</li>
 						<div className="btn-wrapp">
-							<button className="btn-qnt">-</button>
+							<button className="btn-qnt" onClick={() => handleClickDecrease(product)}>
+								-
+							</button>
 							{cartQuantity}
-							<button className="btn-qnt" onClick={() => handleClickIncremet(product)}>
+							<button className="btn-qnt" onClick={() => handleClickIncrease(product)}>
 								+
 							</button>
 						</div>

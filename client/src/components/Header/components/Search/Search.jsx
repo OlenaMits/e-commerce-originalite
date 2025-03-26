@@ -13,12 +13,10 @@ function Search({ active }) {
 	return (
 		<PaperStyles elevation={4}>
 			<SearchWrappAnimate id="example-panel" duration={700} height={active}>
-				<form>
-					<TextField sx={{ width: 500 }} onChange={event => setSearchId(event.target.value.toLowerCase())} id="standard-basic" label="Search for item" variant="standard" />
-					<ButtonSearch onClick={() => navigate(`/search/${searchId}`)}  type="button" aria-label="search">
-						<SearchIcon  />
-					</ButtonSearch>
-				</form>
+				<TextField sx={{ width: 500 }} onChange={event => setSearchId(event.target.value.toLowerCase())} id="standard-basic" label="Search for item" variant="standard" />
+				<ButtonSearch onClick={() => navigate(`/search/${searchId}`)}  type="button" aria-label="search">
+					<SearchIcon  />
+				</ButtonSearch>
 			</SearchWrappAnimate>
 		</PaperStyles>
 	);
