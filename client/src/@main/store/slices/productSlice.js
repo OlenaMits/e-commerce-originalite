@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { getProduct } from '../actions/productActions';
-// import { addProductToCart } from '../actions/cartActions';
 
 const initialState = {
 	data: null,
