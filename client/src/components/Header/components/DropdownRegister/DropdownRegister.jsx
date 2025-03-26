@@ -63,7 +63,7 @@ function DropdownRegister({ active, closeFormPages }) {
 								{errorMessage && <span className="error-message">{Object.values(errorMessage)}</span>}
 
 								<ButtonBlock>
-									<Button variant="contained" color="success" type="submit">
+									<Button variant="contained" color="success" type="submit" onClick={closeFormPages}>
 										Log in
 									</Button>
 								</ButtonBlock>
