@@ -57,7 +57,3 @@ function ManMenu({ active, closeCategories }) {
 }
 
 export default ManMenu;
-
-ManMenu.defaultProps = {
-	height: 0,
-};

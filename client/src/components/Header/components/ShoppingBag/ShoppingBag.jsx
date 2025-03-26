@@ -88,5 +88,5 @@ function ShoppingBag({ isShoppingBag, closeShoppingBag }) {
 		</>
 	);
 }
-ShoppingBag.defaultProps = { ShoppingBagData: [] };
+
 export default ShoppingBag;

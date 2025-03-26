@@ -57,7 +57,3 @@ function WomanMenu({ active, closeCategories }) {
 }
 
 export default WomanMenu;
-
-WomanMenu.defaultProps = {
-	height: 0,
-};

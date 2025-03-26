@@ -57,7 +57,3 @@ function Accessory({ active, closeCategories }) {
 }
 
 export default Accessory;
-
-Accessory.defaultProps = {
-	height: 0,
-};
